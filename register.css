@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url(regbg.jpeg) no-repeat center top;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
+}
+.Registration center {
+  text-align: center;
+  border: 3px solid green;
+}
+
+.Register-box input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #b80f22;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.Register-box input[type="submit"]:hover {
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
+
+.Register-box a {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 20px;
+  color: orange;
+}
+
+.Register-box a:hover {
+  color: #fff;
+}

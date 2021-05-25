@@ -1,0 +1,56 @@
+<html>
+<head><title>Registration</title></head>
+<body>
+		Email <input type="text" name="email" id="email" placeholder="Enter Your Email"><br><br>
+  		Password <input type="text" name="pass" id="password" placeholder="Enter Your Password"><br><br>
+  		Fname <input type="text" name="fname" id="fname" placeholder="Enter Your First Name"><br><br>
+  		Lname <input type="text" name="lname" id="lname" placeholder="Enter Your last Name"><br><br>
+  		Age <input type="text" name="age" id="age" placeholder="Enter Your Age"><br><br>
+  		Dob <input type="text" name="dob" id="dob" placeholder="Enter Your Date of birth(eg.DD-MM-YYYY)><br><br>
+  
+  		Phone <input type="text" name="phone" id="phone" placeholder="Enter Your Phone number"><br><br>
+  		Address1 <input type="text" name="address1" id="address1" placeholder="Enter Your address line 1"><br><br>
+  		Address2 <input type="text" name="address2" id="address2" placeholder="Enter Your address line 2"><br><br>
+  		<button id="register" >Registration New User</button>
+		<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+		
+		<script id="MainScript">
+			// Your web app's Firebase configuration
+  			var firebaseConfig = {
+    			apiKey: "AIzaSyB0A2apZ8d_DQPfWG_Zmlt_1PtoMohAuXA",
+    			authDomain: "akshay4grootan.firebaseapp.com",
+    			projectId: "akshay4grootan",
+    			storageBucket: "akshay4grootan.appspot.com",
+    			messagingSenderId: "303682639662",
+    			appId: "1:303682639662:web:441513bcfc9f6358ba8cbf"
+  		};
+  		// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+
+		Var fname,lname,age,dob, phone,address1,address2;
+		function Ready(){
+			 fname=document.getElementById('fname').value;
+			 lname=document.getElementById('lname').value;
+			 age=document.getElementById('age').value;
+			 phone=document.getElementById('phone').value;
+			 dob=document.getElementById('dob').value;
+			 address1=document.getElementById('address1').value;
+			 address2=document.getElementById('address2').value;
+		}
+		document.getElementById("register").onclick=function(){
+			Ready();
+			firebase.database().ref('user/'+email).set({
+			Firstname: fname;
+			Lastname: lname,
+    			Age: age,
+			Date_of_Birth: dob,
+			Phone: phone,
+    			Address1: address1,
+			Address2: address2
+		});
+	 }
+	</script>
+</body>
+</html>
